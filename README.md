@@ -1,12 +1,12 @@
 # Stabilizer Rényi Entropy
 
-This repository provides an implementation to compute the [Stabilizer Rényi Entropy (SRE)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.050402) for qubit systems. Using a combination of linear algebra operations and Pauli string manipulations, the code calculates the \( n \)-th Rényi entropy for stabilizer states.
+This repository provides an implementation to compute the [Stabilizer Rényi Entropy (SRE)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.050402) for qubit systems. Using a combination of linear algebra operations and Pauli string manipulations, the code calculates the n-th Rényi entropy for stabilizer states.
 
 ## Overview
 
 The main computation involves evaluating expectation values of Pauli strings acting on spin configurations, then summing these contributions to obtain the Rényi entropy for a given quantum state. The code is parallel-ready.
 
-The algorithm computes the \( n \)-th order Stabilizer Rényi Entropy (SRE) for a quantum state represented by a wavefunction \( \psi \) on \( N \) qubits. The SRE is a measure of entanglement specifically tailored for stabilizer states, and is defined as:
+The algorithm computes the $n$-th order Stabilizer Rényi Entropy (SRE) for a quantum state represented by a wavefunction \( \psi \) on \( N \) qubits. The SRE is a measure of entanglement specifically tailored for stabilizer states, and is defined as:
 
 $$
 S_n = \frac{1}{1 - n} \log \left( \sum_{P \in \mathcal{P}_N} \left| \langle \psi | P | \psi \rangle \right|^{2n} \right),
