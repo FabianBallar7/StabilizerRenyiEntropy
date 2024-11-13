@@ -67,7 +67,7 @@ println("Stabilizer Rényi Entropy (n=2): ", entropy)
 
 ## Disclaimer
 
-This code was collaboratively developed with @laurinbrunner. While we've focused on creating a functional implementation, there may be opportunities to optimize its performance further. We noticed a lack of similar implementations available, so we hope this repository helps fill a gap in the community. 
+This code was collaboratively developed with [@laurinbrunner](https://github.com/laurinbrunner). While we've focused on creating a functional implementation, there may be opportunities to optimize its performance further. We noticed a lack of similar implementations available, so we hope this repository helps fill a gap in the community. 
 
 Contributions and suggestions are very welcome! If you have ideas for improvements or new features, feel free to submit a pull request.
 
