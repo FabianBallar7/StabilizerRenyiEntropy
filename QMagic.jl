@@ -54,6 +54,15 @@ function Σs(P,s)
     return (coef,s_)
 end
 
+function config_to_index(s)
+    N = length(s)
+    s_n = (s .+ 1)/2
+    
+    s_to_basis = Int(dot(s_n,(2 .^ (0:N-1)))) + 1
+    
+    return s_to_basis
+    
+end
 
 
 function Psi_s(s,vec)
@@ -99,7 +108,36 @@ function Mn(n,psi)
 end
 
 
+#n=2 Renyi entropy for mixed states (subtracting log purity)
+function M2_mixed(rho)
+    
+    expectation_numerator = 0
+    expectation_denominator = 0
+    N = Int(log2(size(rho)[1]))
 
+
+    @showprogress for i=0:4^N-1 
+        P = digits(i,base=4,pad=N)
+        spin_sum = 0
+        for j=0:2^N - 1
+            s = 2 .* digits(j,base=2,pad=N) .- 1
+            alpha, Ps = Σs(P,s)
+            spin_sum += rho[j+1,config_to_index(Ps)] * alpha 
+        end
+        expectation_numerator += spin_sum^4
+        expectation_denominator += spin_sum^2
+    end
+    
+    out = -1*log(expectation_numerator/expectation_denominator)
+    
+    if abs(imag(out)) > 10^(-12) 
+        @warn "Warning imaginary part is non-zero."
+        return out
+    else
+        return real(out)
+    end
+    
+end
 
 
 
