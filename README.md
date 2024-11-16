@@ -1,6 +1,6 @@
 # Stabilizer Rényi Entropy
 
-This repository provides an implementation to compute the [Stabilizer Rényi Entropy (SRE)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.050402) for qubit systems. Using a combination of linear algebra operations and Pauli string manipulations, the code calculates the n-th Rényi entropy for stabilizer states.
+This repository provides an implementation to compute the [Stabilizer Rényi Entropy (SRE)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.050402) for qubit systems. Using a combination of linear algebra operations and Pauli string manipulations, the code calculates the n-th Rényi entropy for both pure and mixed states.
 
 ## Overview
 
